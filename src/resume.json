@@ -1,18 +1,18 @@
 {
   "basics": {
     "name": "Kendrick Sin",
-    "label": "Snr. Business Development",
+    "label": "Snr. Business Technical Engineer",
     "image": "",
     "email": "kendricksin@outlook.sg",
     "phone": "+66 9841960913 (TH)",
     "url": "",
     "summary": "Highly motivated and results-driven Business Development generalist with Product/Project Manager experience, and a proven track record in business development, innovation, and technology implementation. Experienced in managing complex, multi-stakeholder projects across diverse industries, with a focus on cloud migration and digital transformation. Fluent in English, Chinese, and Thai, with a talent for building strong relationships across cultural boundaries.",
     "location": {
-      "address": "Block 440c Clementi Ave 3 #40-32",
-      "postalCode": "S123440",
-      "city": "Singapore",
-      "countryCode": "SG",
-      "region": "Singapore"
+      "address": "Chatuchak",
+      "postalCode": "10900",
+      "city": "Bangkok",
+      "countryCode": "TH",
+      "region": "Thailand"
     },
     "profiles": [
       {
@@ -235,5 +235,23 @@
     }
   ],
   "references": [],
-  "projects": []
+  "projects": [
+    {
+      "name": "Vibe Coding with Qwen",
+      "summary": "A project exploring vibe coding techniques with Qwen",
+      "url": "https://github.com/kendricksin/learn_to_qwen",
+      "startDate": "2025-01-01",
+      "keywords": ["AI", "Qwen", "Coding"]
+    },
+    {
+      "name": "Interactive Resume",
+      "summary": "An interactive web-based resume built vibe coding",
+      "url": "https://github.com/kendricksin/interactive_resume",
+      "startDate": "2025-01-01",
+      "keywords": ["Web Development", "Resume", "React"],
+      "highlights": [
+        "Live demo: https://kendricksin.github.io/interactive_resume/"
+      ]
+    }
+  ]
 }
