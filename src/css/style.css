@@ -1,0 +1,525 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    background: var(--header-bg);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.animation-container {
+    display: flex;
+    align-items: flex-end;
+    margin-right: 1rem;
+    height: 50px;
+}
+
+.flower {
+    width: 36px;
+    height: 50px;
+    position: relative;
+    transform-origin: bottom center;
+    animation: sway 4s ease-in-out infinite;
+}
+
+/* Stem */
+.flower::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 20px;
+    background: linear-gradient(to top, #228B22, #32CD32);
+    border-radius: 2px;
+}
+
+/* Leaf on stem */
+.flower::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 8px;
+    height: 5px;
+    background: #32CD32;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    transform-origin: left bottom;
+    animation: leafSway 4s ease-in-out infinite;
+}
+
+.petal {
+    position: absolute;
+    width: 12px;
+    height: 18px;
+    background: var(--accent-color);
+    border-radius: 50% 50% 50% 50%;
+    transform-origin: center bottom;
+    box-shadow: inset 0 0 5px rgba(255,255,255,0.3);
+}
+
+.petal-1 {
+    top: 2px;
+    left: 12px;
+    transform: rotate(0deg);
+    animation: petalBreath 3s ease-in-out infinite;
+}
+.petal-2 {
+    top: 8px;
+    right: 2px;
+    transform: rotate(72deg);
+    animation: petalBreath 3s ease-in-out 0.3s infinite;
+}
+.petal-3 {
+    bottom: 18px;
+    right: 5px;
+    transform: rotate(144deg);
+    animation: petalBreath 3s ease-in-out 0.6s infinite;
+}
+.petal-4 {
+    bottom: 18px;
+    left: 5px;
+    transform: rotate(216deg);
+    animation: petalBreath 3s ease-in-out 0.9s infinite;
+}
+.petal-5 {
+    top: 8px;
+    left: 2px;
+    transform: rotate(288deg);
+    animation: petalBreath 3s ease-in-out 1.2s infinite;
+}
+
+.center {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle, #FFD700 30%, #FFA500 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(255, 215, 0, 0.5);
+    z-index: 1;
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: rotate(-8deg);
+    }
+    25% {
+        transform: rotate(-3deg);
+    }
+    50% {
+        transform: rotate(8deg);
+    }
+    75% {
+        transform: rotate(3deg);
+    }
+}
+
+@keyframes petalBreath {
+    0%, 100% {
+        transform: scale(1) rotate(var(--rotation, 0deg));
+    }
+    50% {
+        transform: scale(1.05) rotate(var(--rotation, 0deg));
+    }
+}
+
+@keyframes leafSway {
+    0%, 100% {
+        transform: rotate(-45deg) scale(1);
+    }
+    50% {
+        transform: rotate(-35deg) scale(1.1);
+    }
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--button-bg);
+    color: var(--button-text);
+    transition: transform 0.2s ease;
+}
+
+.navbar button:hover {
+    transform: scale(1.05);
+}
+
+.profile-section {
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.profile-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--heading-color);
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.contact-info div, .contact-info a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+}
+
+.social-profiles {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    background: var(--card-bg);
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.social-link svg {
+    flex-shrink: 0;
+}
+
+.social-linkedin:hover {
+    background: #0077B5;
+    color: white;
+    border-color: #0077B5;
+}
+
+.social-github:hover {
+    background: #333;
+    color: white;
+    border-color: #333;
+}
+
+.social-twitter:hover {
+    background: #1DA1F2;
+    color: white;
+    border-color: #1DA1F2;
+}
+
+.tabs-container {
+    margin-top: 2rem;
+}
+
+.tab-nav {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+}
+
+.tab-button {
+    padding: 1rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tab-button.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+    background: var(--card-bg);
+}
+
+.tab-button:hover:not(.active) {
+    color: var(--heading-color);
+    background: var(--hover-bg);
+}
+
+.tab-pane {
+    display: none;
+    animation: slideIn 0.3s ease-out;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.content-section {
+    margin: 3rem 0;
+}
+
+.content-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.work-item, .education-item, .project-item {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border-left: 3px solid var(--accent-color);
+    background: var(--card-bg);
+    border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.work-item:hover, .education-item:hover, .project-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.work-item h3, .education-item h3, .project-item h3 {
+    color: var(--heading-color);
+    margin-bottom: 0.5rem;
+}
+
+.work-item .dates, .education-item .dates, .project-item .dates {
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.skill-category {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: var(--card-bg);
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.skill-name {
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: var(--heading-color);
+}
+
+.skill-level {
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+.skill-keywords {
+    margin-top: 0.25rem;
+}
+
+.skill-keywords span {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    margin: 0.25rem;
+    font-size: 0.8rem;
+    transition: transform 0.2s ease;
+}
+
+.skill-keywords span:hover {
+    transform: scale(1.05);
+}
+
+.interest-item, .award-item {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: var(--card-bg);
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.certificate-item {
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    background: var(--card-bg);
+    border-radius: 4px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.cert-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.cert-name {
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.cert-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.cert-issuer {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+.language-item {
+    display: inline-block;
+    margin: 0.25rem 0.5rem 0.25rem 0;
+    padding: 0.5rem 1rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.lang-name {
+    font-weight: bold;
+    color: var(--heading-color);
+}
+
+.lang-fluency {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-left: 0.25rem;
+}
+
+#languages-list {
+    margin-bottom: 1.5rem;
+}
+
+#certificates-list {
+    margin-bottom: 1.5rem;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media print {
+    .navbar, .tabs-container, .tab-nav {
+        display: none;
+    }
+    
+    .tab-pane {
+        display: block !important;
+    }
+    
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .animation-container {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .tab-nav {
+        flex-wrap: wrap;
+    }
+    
+    .tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+}

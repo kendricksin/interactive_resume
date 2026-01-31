@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Resume</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="src/css/theme.css">
+    <link rel="stylesheet" href="src/css/tabs.css">
+</head>
+<body>
+    <div id="app">
+        <header class="header">
+            <nav class="navbar">
+                <div class="animation-container">
+                    <div class="flower">
+                        <div class="petal petal-1"></div>
+                        <div class="petal petal-2"></div>
+                        <div class="petal petal-3"></div>
+                        <div class="petal petal-4"></div>
+                        <div class="petal petal-5"></div>
+                        <div class="center"></div>
+                    </div>
+                </div>
+                <div class="nav-buttons">
+                    <button id="theme-toggle">Toggle Theme</button>
+                    <button id="pdf-download">Download PDF</button>
+                </div>
+            </nav>
+        </header>
+        
+        <main class="container">
+            <section id="profile-section" class="profile-section">
+                <div class="profile-header">
+                    <h1 id="full-name">Loading...</h1>
+                    <p id="job-title" class="subtitle">Loading...</p>
+                    <p id="summary"></p>
+                </div>
+                
+                <div class="contact-info">
+                    <div id="location"></div>
+                    <a id="email-link" href="#"></a>
+                    <a id="phone-link" href="#"></a>
+                    <a id="website-link" href="#" target="_blank"></a>
+                </div>
+
+                <div id="social-profiles" class="social-profiles"></div>
+            </section>
+            
+            <!-- Interactive Tabs -->
+            <div class="tabs-container">
+                <div class="tab-nav">
+                    <button class="tab-button active" data-tab="experience">Experience</button>
+                    <button class="tab-button" data-tab="education">Education</button>
+                    <button class="tab-button" data-tab="skills">Skills</button>
+                    <button class="tab-button" data-tab="projects">Projects</button>
+                    <button class="tab-button" data-tab="about">About Me</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="experience-tab" class="tab-pane active">
+                        <h2>Work Experience</h2>
+                        <div id="work-experience"></div>
+                    </div>
+                    
+                    <div id="education-tab" class="tab-pane">
+                        <h2>Education</h2>
+                        <div id="education-list"></div>
+                    </div>
+                    
+                    <div id="skills-tab" class="tab-pane">
+                        <h2>Skills & Technologies</h2>
+                        <div id="skills-container"></div>
+                    </div>
+                    
+                    <div id="projects-tab" class="tab-pane">
+                        <h2>Projects</h2>
+                        <div id="projects-list"></div>
+                    </div>
+                    
+                    <div id="about-tab" class="tab-pane">
+                        <h2>About Me</h2>
+                        <div id="about-content">
+                            <h3>Languages</h3>
+                            <div id="languages-list"></div>
+                            <h3>Certifications</h3>
+                            <div id="certificates-list"></div>
+                            <h3>Awards</h3>
+                            <div id="awards-list"></div>
+                            <h3>Interests & Hobbies</h3>
+                            <div id="interests-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="src/js/resume-data.js"></script>
+    <script src="src/js/theme-manager.js"></script>
+    <script src="src/js/renderer.js"></script>
+    <script src="src/js/pdf-generator.js"></script>
+    <script src="src/js/tabs.js"></script>
+    <script src="src/js/animations.js"></script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>

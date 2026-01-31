@@ -1,0 +1,86 @@
+.tab-nav {
+    display: flex;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    overflow-x: auto;
+    gap: 0.5rem;
+}
+
+.tab-button {
+    padding: 1rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-weight: 500;
+    position: relative;
+}
+
+.tab-button::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.tab-button:hover::after {
+    width: 100%;
+}
+
+.tab-button.active {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+    background: var(--card-bg);
+}
+
+.tab-button:hover:not(.active) {
+    color: var(--heading-color);
+    background: var(--hover-bg);
+}
+
+.tab-pane {
+    display: none;
+    animation: slideIn 0.3s ease-out;
+    min-height: 300px;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.tab-pane h2 {
+    color: var(--heading-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsive tabs */
+@media (max-width: 768px) {
+    .tab-nav {
+        flex-wrap: wrap;
+    }
+    
+    .tab-button {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+        min-width: fit-content;
+    }
+}

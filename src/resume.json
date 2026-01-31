@@ -1,0 +1,239 @@
+{
+  "basics": {
+    "name": "Kendrick Sin",
+    "label": "Snr. Business Development",
+    "image": "",
+    "email": "kendricksin@outlook.sg",
+    "phone": "+66 9841960913 (TH)",
+    "url": "",
+    "summary": "Highly motivated and results-driven Business Development generalist with Product/Project Manager experience, and a proven track record in business development, innovation, and technology implementation. Experienced in managing complex, multi-stakeholder projects across diverse industries, with a focus on cloud migration and digital transformation. Fluent in English, Chinese, and Thai, with a talent for building strong relationships across cultural boundaries.",
+    "location": {
+      "address": "Block 440c Clementi Ave 3 #40-32",
+      "postalCode": "S123440",
+      "city": "Singapore",
+      "countryCode": "SG",
+      "region": "Singapore"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "kendrick-sin",
+        "url": "https://www.linkedin.com/in/kendrick-sin-8b1b91176/"
+      },
+      {
+        "network": "GitHub",
+        "username": "kendricksin",
+        "url": "https://github.com/kendricksin"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Alibaba Cloud Thailand",
+      "position": "Senior Business Development Manager",
+      "startDate": "2023-12-01",
+      "endDate": "",
+      "summary": "Manage business development and project delivery for cloud solutions",
+      "highlights": [
+        "Lead end-to-end project lifecycle management, ensuring on-time delivery and client satisfaction with short response times to critical issues",
+        "Implement robust project tracking systems, resulting in improved project visibility and reduction in delays with 100% project delivery rate to date",
+        "Conduct regular project status updates to stakeholders, maintaining clear communication channels from working level to higher management"
+      ]
+    },
+    {
+      "name": "Alibaba Cloud ISV",
+      "position": "Regional BD / Product Manager",
+      "startDate": "2021-12-01",
+      "endDate": "2023-12-01",
+      "summary": "Led product lifecycle management and market expansion across Southeast Asia",
+      "highlights": [
+        "Spearheaded the introduction of innovative Chinese technologies to the South East Asian market, managing the entire product lifecycle",
+        "Developed and executed project plans for market entry, resulting in successful launches in 3 countries within 8 months",
+        "Implemented Agile methodologies in product development, aligned product roadmap to meet customers' requirements, increasing in 300% uptake of software in local market",
+        "Balanced lean operating costs with project revenue, to answer to investors",
+        "Successfully closed deals with 5 major clients, resulting in 1200% year-over-year revenue growth"
+      ]
+    },
+    {
+      "name": "Morphosis Apps",
+      "position": "Technical Project Manager",
+      "startDate": "2021-06-01",
+      "endDate": "2021-12-01",
+      "summary": "Led Agile development team for e-commerce application",
+      "highlights": [
+        "Led an Agile development team of 20+ members in building a brand-new e-commerce application",
+        "Utilized Jira workflows to conduct Scrum processes",
+        "Ensured project kept up with timeline, while maintaining high quality standards",
+        "Implemented a requirement gathering process, reducing scope creep by 50% and improving estimation accuracy"
+      ]
+    },
+    {
+      "name": "Singapore Armed Forces",
+      "position": "Innovator-in-residence",
+      "startDate": "2019-05-01",
+      "endDate": "2021-05-01",
+      "summary": "Managed innovation projects and developed technology solutions for military operations",
+      "highlights": [
+        "Managed a portfolio of six organization-scale innovation projects valued at up to $5 million each",
+        "Consistently delivered two Minimum Viable Products bi-annually, with 100% progressing to full implementation",
+        "Led the development of a predictive material provisioning system, reducing inventory costs by 30% and improving supply chain efficiency",
+        "Introduced gamification elements to naval warfare training, increasing trainee engagement by 300% and introduced metric tracking for warfighting trainees"
+      ]
+    },
+    {
+      "name": "Singapore Armed Forces",
+      "position": "Naval Officer",
+      "startDate": "2017-05-01",
+      "endDate": "2019-05-01",
+      "summary": "Served as naval officer in the Singapore Armed Forces",
+      "highlights": []
+    }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "Nanyang Technological University (NTU)",
+      "area": "Mechanical Engineering",
+      "studyType": "Bachelor of Engineering with specialization in Systems Engineering (1st Class Honours)",
+      "startDate": "2017-08-01",
+      "endDate": "2021-05-01",
+      "gpa": "",
+      "additional": "Two student exchange programs in Bangkok, professional Thai language training, participated in multiple volunteer engineering camps and social causes"
+    }
+  ],
+  "awards": [
+    {
+      "title": "John Cheung Overseas Attachment Award",
+      "date": "2019-01-01",
+      "awarder": "NTU",
+      "summary": "Awarded for outstanding academic performance coupled with enriching overseas work experience during student exchange and internship at Bangkok"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "Google Cloud Computing Associate Cloud Engineer (ACE)",
+      "date": "2025-02-01",
+      "issuer": "Google Cloud",
+      "url": ""
+    },
+    {
+      "name": "Project Management Professional (PMP)",
+      "date": "2024-11-01",
+      "issuer": "Project Management Institute",
+      "url": ""
+    },
+    {
+      "name": "Certified Argo Project Associate",
+      "date": "2024-06-01",
+      "issuer": "Linux Foundation",
+      "url": ""
+    },
+    {
+      "name": "Alibaba Cloud Computing Professional",
+      "date": "2023-01-01",
+      "issuer": "Alibaba Cloud Academy",
+      "url": ""
+    },
+    {
+      "name": "Certified Scrum Master (CSM)",
+      "date": "2021-08-01",
+      "issuer": "Scrum Alliance",
+      "url": ""
+    },
+    {
+      "name": "Google Analytics Individual Qualification",
+      "date": "2021-03-01",
+      "issuer": "Google",
+      "url": ""
+    },
+    {
+      "name": "Business Process Re-engineering (BPR)",
+      "date": "2020-02-01",
+      "issuer": "NUS-ISS",
+      "url": ""
+    },
+    {
+      "name": "Certified Ethical Hacker (CEH)",
+      "date": "2019-11-01",
+      "issuer": "EC-Council",
+      "url": ""
+    },
+    {
+      "name": "Diploma in Leadership and People Management",
+      "date": "2019-05-01",
+      "issuer": "SkillsFuture SG",
+      "url": ""
+    },
+    {
+      "name": "Data Analytics with Python",
+      "date": "2019-03-01",
+      "issuer": "DataCamp",
+      "url": ""
+    },
+    {
+      "name": "Machine Learning",
+      "date": "2019-02-01",
+      "issuer": "Stanford Online",
+      "url": ""
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": "Project Management",
+      "level": "Expert",
+      "keywords": ["Agile/Scrum", "Waterfall", "Jira", "MS Project", "Risk Management", "Stakeholder Communication"]
+    },
+    {
+      "name": "Cloud Technologies / DevOps",
+      "level": "Advanced",
+      "keywords": ["Alibaba Cloud", "AWS", "Azure", "Google Cloud Platform", "Cloud Migration", "Cloud Optimization"]
+    },
+    {
+      "name": "Business Analysis",
+      "level": "Advanced",
+      "keywords": ["Requirements Gathering", "Process Improvement", "Data Analytics"]
+    },
+    {
+      "name": "Stakeholder Management",
+      "level": "Expert",
+      "keywords": ["Building Rapport", "Cross-cultural Communication", "Executive Communication"]
+    },
+    {
+      "name": "Leadership",
+      "level": "Advanced",
+      "keywords": ["Team Building", "Mentoring", "Performance Management"]
+    },
+    {
+      "name": "Fast Learner",
+      "level": "Advanced",
+      "keywords": ["Adaptability", "New Technologies", "Rapid Learning"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Chinese",
+      "fluency": "Native speaker"
+    },
+    {
+      "language": "Thai",
+      "fluency": "Professional working proficiency"
+    }
+  ],
+  "interests": [
+    {
+      "name": "Engineering",
+      "keywords": ["Volunteer Engineering Camps", "Social Causes"]
+    },
+    {
+      "name": "International Experience",
+      "keywords": ["Student Exchange Programs", "Cross-cultural Communication"]
+    }
+  ],
+  "references": [],
+  "projects": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "interactive_resume",
+  "version": "1.0.0",
+  "description": "Modern interactive resume website with JSON data",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "build": "cp -r src/* dist/ && cp index.html dist/",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": ["resume", "portfolio", "personal-website"],
+  "author": "",
+  "license": "MIT"
+}
