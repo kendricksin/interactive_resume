@@ -1,4 +1,7 @@
 function renderProfile(basics) {
+    document.title = basics.name && basics.label
+        ? `${basics.name} — ${basics.label}`
+        : basics.name || 'Resume';
     document.getElementById('full-name').textContent = basics.name || 'Name Not Available';
     document.getElementById('job-title').textContent = basics.label || '';
     document.getElementById('summary').textContent = basics.summary || '';

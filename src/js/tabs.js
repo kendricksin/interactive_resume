@@ -1,5 +1,6 @@
 class TabManager {
     constructor() {
+        this.botLoaded = false;
         this.initTabs();
     }
 
@@ -10,18 +11,35 @@ class TabManager {
         tabButtons.forEach(button => {
             button.addEventListener('click', (e) => {
                 const targetTab = e.target.getAttribute('data-tab');
-                
-                // Remove active class from all buttons and panes
+
                 tabButtons.forEach(btn => btn.classList.remove('active'));
                 tabPanes.forEach(pane => pane.classList.remove('active'));
-                
-                // Add active class to clicked button
+
                 e.target.classList.add('active');
-                
-                // Show corresponding pane
                 document.getElementById(`${targetTab}-tab`).classList.add('active');
+
+                if (targetTab === 'bot' && !this.botLoaded) {
+                    this.loadBot();
+                }
             });
         });
+    }
+
+    loadBot() {
+        const iframe = document.getElementById('kendrick-bot-frame');
+        const placeholder = document.getElementById('bot-placeholder');
+        const src = iframe.getAttribute('data-src');
+
+        this.botLoaded = true;
+
+        iframe.addEventListener('load', () => {
+            if (iframe.src !== 'about:blank') {
+                iframe.style.display = 'block';
+                placeholder.style.display = 'none';
+            }
+        }, { once: true });
+
+        iframe.src = src;
     }
 }
 

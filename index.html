@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Professional Resume</title>
+    <title>Kendrick Sin</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%233498db'/><text y='.9em' font-size='65' font-family='Space Grotesk,sans-serif' font-weight='700' fill='white' x='50%' text-anchor='middle' dominant-baseline='top'>K</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -37,7 +38,6 @@
                 <div class="profile-header">
                     <h1 id="full-name">Loading...</h1>
                     <p id="job-title" class="subtitle">Loading...</p>
-                    <p id="summary"></p>
                 </div>
                 
                 <div class="contact-info">
@@ -53,37 +53,18 @@
             <!-- Interactive Tabs -->
             <div class="tabs-container">
                 <div class="tab-nav">
-                    <button class="tab-button active" data-tab="experience">Experience</button>
+                    <button class="tab-button active" data-tab="about">About Me</button>
+                    <button class="tab-button" data-tab="experience">Experience</button>
                     <button class="tab-button" data-tab="education">Education</button>
                     <button class="tab-button" data-tab="skills">Skills</button>
                     <button class="tab-button" data-tab="projects">Projects</button>
-                    <button class="tab-button" data-tab="about">About Me</button>
                     <button class="tab-button tab-button-bot" data-tab="bot">🤖 Kendrick Bot</button>
                 </div>
 
                 <div class="tab-content">
-                    <div id="experience-tab" class="tab-pane active">
-                        <h2>Work Experience</h2>
-                        <div id="work-experience"></div>
-                    </div>
-                    
-                    <div id="education-tab" class="tab-pane">
-                        <h2>Education</h2>
-                        <div id="education-list"></div>
-                    </div>
-                    
-                    <div id="skills-tab" class="tab-pane">
-                        <h2>Skills & Technologies</h2>
-                        <div id="skills-container"></div>
-                    </div>
-                    
-                    <div id="projects-tab" class="tab-pane">
-                        <h2>Projects</h2>
-                        <div id="projects-list"></div>
-                    </div>
-                    
-                    <div id="about-tab" class="tab-pane">
+                    <div id="about-tab" class="tab-pane active">
                         <h2>About Me</h2>
+                        <p id="summary" class="about-summary"></p>
                         <div id="about-content">
                             <h3>Languages</h3>
                             <div id="languages-list"></div>
@@ -96,22 +77,40 @@
                         </div>
                     </div>
 
+                    <div id="experience-tab" class="tab-pane">
+                        <h2>Work Experience</h2>
+                        <div id="work-experience"></div>
+                    </div>
+
+                    <div id="education-tab" class="tab-pane">
+                        <h2>Education</h2>
+                        <div id="education-list"></div>
+                    </div>
+
+                    <div id="skills-tab" class="tab-pane">
+                        <h2>Skills & Technologies</h2>
+                        <div id="skills-container"></div>
+                    </div>
+
+                    <div id="projects-tab" class="tab-pane">
+                        <h2>Projects</h2>
+                        <div id="projects-list"></div>
+                    </div>
+
                     <div id="bot-tab" class="tab-pane">
-                        <h2>Chat with Kendrick Bot</h2>
-                        <p class="bot-description">Ask me anything about my experience, skills, or projects — I'm an AI agent trained on Kendrick's resume.</p>
+                        <p class="bot-description">Ask me anything about Kendrick's experience, skills, career, personality, or use one of the prompts!</p>
                         <div class="bot-iframe-container">
                             <iframe
                                 id="kendrick-bot-frame"
                                 src="about:blank"
-                                data-src="https://kendrick-bot.onrender.com"
+                                data-src="https://kendrick-bot-5g9q.onrender.com"
                                 title="Kendrick Bot"
-                                allow="microphone"
-                                loading="lazy">
+                                allow="microphone">
                             </iframe>
                             <div class="bot-placeholder" id="bot-placeholder">
                                 <span class="bot-placeholder-icon">🤖</span>
-                                <p>Kendrick Bot is coming soon!</p>
-                                <p class="bot-placeholder-sub">The agent will be hosted on Render and embedded here.</p>
+                                <p id="bot-placeholder-text">// waking up KENDRICK.BOT</p>
+                                <p class="bot-placeholder-sub">// hosted on Render — cold start may take 20–40s</p>
                             </div>
                         </div>
                     </div>
