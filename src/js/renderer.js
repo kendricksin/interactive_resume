@@ -49,6 +49,17 @@ function renderSocialProfiles(profiles) {
 
         container.appendChild(link);
     });
+
+    // Ask me button
+    const askBtn = document.createElement('button');
+    askBtn.className = 'ask-me-btn';
+    askBtn.innerHTML = 'Talk to my Agent 🤖';
+    askBtn.addEventListener('click', () => {
+        const botTabBtn = document.querySelector('[data-tab="bot"]');
+        if (botTabBtn) botTabBtn.click();
+        document.querySelector('.tabs-container').scrollIntoView({ behavior: 'smooth' });
+    });
+    container.appendChild(askBtn);
 }
 
 function getNetworkIcon(network) {

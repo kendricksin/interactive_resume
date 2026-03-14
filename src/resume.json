@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Kendrick Sin",
-    "label": "Snr. Business Technical Engineer",
+    "label": "AI Solutions Strategist & Business Technical Lead",
     "image": "",
     "email": "kendricksin@outlook.sg",
-    "phone": "+66 9841960913 (TH)",
+    "phone": "+66 923969583 (TH)",
     "url": "",
-    "summary": "Highly motivated and results-driven Business Development generalist with Product/Project Manager experience, and a proven track record in business development, innovation, and technology implementation. Experienced in managing complex, multi-stakeholder projects across diverse industries, with a focus on cloud migration and digital transformation. Fluent in English, Chinese, and Thai, with a talent for building strong relationships across cultural boundaries.",
+    "summary": "AI Solutions Strategist and Business Technical Lead with a proven track record of bridging the gap between enterprise business needs and hands-on AI deployment. Specialized in enabling business users to safely, sustainably, and reliably adopt AI agentic solutions — including MCP Agent frameworks — by identifying process gaps and driving end-to-end implementation. Combines deep GTM strategy and enterprise deal-making experience with technical credibility in AI product governance, POC delivery, and open-source ecosystem development. Fluent in English, Chinese, and Thai, with a talent for building strong relationships across cultural boundaries.",
     "location": {
       "address": "Chatuchak",
       "postalCode": "10900",
@@ -33,11 +33,14 @@
       "position": "Senior Business Development Manager",
       "startDate": "2023-12-01",
       "endDate": "",
-      "summary": "Manage business development and project delivery for cloud solutions",
+      "summary": "Drive AI business development and technical strategy for enterprise clients across Thailand and Southeast Asia",
       "highlights": [
-        "Lead end-to-end project lifecycle management, ensuring on-time delivery and client satisfaction with short response times to critical issues",
-        "Implement robust project tracking systems, resulting in improved project visibility and reduction in delays with 100% project delivery rate to date",
-        "Conduct regular project status updates to stakeholders, maintaining clear communication channels from working level to higher management"
+        "Engineered and executed the GTM strategy for AI distribution in the Thailand market, achieving 3-digit growth in regional adoption since 2024",
+        "Structured and negotiated multi-year AI transformation roadmaps and commercial agreements for Tier-1 enterprise clients, securing long-term recurring revenue and strategic partnerships",
+        "Scaled the local developer community for the Qwen AI ecosystem; authored and maintained open-source repositories that democratize AI implementation for non-technical stakeholders",
+        "Led high-stakes Proof of Concept (POC) developments, bridging the gap between complex AI capabilities and tangible business ROI for enterprise customers",
+        "Proactively identified and resolved critical architectural bugs within the core AI product suite, ensuring seamless deployment and maintaining 99.9% reliability for mission-critical client initiatives",
+        "Acted as the primary technical-business liaison, translating local market requirements into product engineering feedback to influence the global AI roadmap"
       ]
     },
     {
@@ -72,7 +75,7 @@
       "position": "Innovator-in-residence",
       "startDate": "2019-05-01",
       "endDate": "2021-05-01",
-      "summary": "Managed innovation projects and developed technology solutions for military operations",
+      "summary": "Seconded officers from Republic of Singapore Navy to Defence Science and Technology Agency (DSTA) to managed innovation initiatives and developed technology solutions for military operations",
       "highlights": [
         "Managed a portfolio of six organization-scale innovation projects valued at up to $5 million each",
         "Consistently delivered two Minimum Viable Products bi-annually, with 100% progressing to full implementation",
@@ -94,22 +97,28 @@
     {
       "institution": "Nanyang Technological University (NTU)",
       "area": "Mechanical Engineering",
-      "studyType": "Bachelor of Engineering with specialization in Systems Engineering (1st Class Honours)",
-      "startDate": "2017-08-01",
-      "endDate": "2021-05-01",
-      "gpa": "",
-      "additional": "Two student exchange programs in Bangkok, professional Thai language training, participated in multiple volunteer engineering camps and social causes"
+      "studyType": "Bachelor of Engineering with specialization in Systems Engineering",
+      "startDate": "2013-08-01",
+      "endDate": "2017-05-01",
+      "gpa": "4.63 / 5.0 (First Class Honours)",
+      "additional": "Two student exchange programs in Bangkok, professional Thai language training, participated in multiple volunteer engineering camps and social causes. During which also filed patent as part of Undergraduate Research Experience on Campus (URECA) program extra-curricular research program."
     }
   ],
   "awards": [
     {
       "title": "John Cheung Overseas Attachment Award",
-      "date": "2019-01-01",
+      "date": "2016-01-01",
       "awarder": "NTU",
       "summary": "Awarded for outstanding academic performance coupled with enriching overseas work experience during student exchange and internship at Bangkok"
     }
   ],
   "certificates": [
+    {
+      "name": "Alibaba Cloud Certified Professional LLM Engineer",
+      "date": "2025-10-01",
+      "issuer": "Alibaba Cloud Academy",
+      "url": ""
+    },
     {
       "name": "Google Cloud Computing Associate Cloud Engineer (ACE)",
       "date": "2025-02-01",
@@ -180,48 +189,48 @@
   "publications": [],
   "skills": [
     {
+      "name": "AI Agentic Solutions",
+      "level": "Advanced",
+      "keywords": ["MCP Agents", "LLM Integration", "AI Workflow Automation", "RAG", "Prompt Engineering", "AI Deployment", "Open-Source AI Ecosystems"]
+    },
+    {
+      "name": "Business Process Analysis",
+      "level": "Expert",
+      "keywords": ["Process Gap Identification", "Requirements Gathering", "AI Use Case Discovery", "Process Improvement", "Data Analytics", "Business ROI Mapping"]
+    },
+    {
+      "name": "Cloud Technologies / DevOps",
+      "level": "Advanced",
+      "keywords": ["Alibaba Cloud", "AWS", "Azure", "Google Cloud Platform", "Cloud Migration", "Cloud Optimization", "ArgoCD", "Container Orchestration"]
+    },
+    {
       "name": "Project Management",
       "level": "Expert",
       "keywords": ["Agile/Scrum", "Waterfall", "Jira", "MS Project", "Risk Management", "Stakeholder Communication"]
     },
     {
-      "name": "Cloud Technologies / DevOps",
-      "level": "Advanced",
-      "keywords": ["Alibaba Cloud", "AWS", "Azure", "Google Cloud Platform", "Cloud Migration", "Cloud Optimization"]
-    },
-    {
-      "name": "Business Analysis",
-      "level": "Advanced",
-      "keywords": ["Requirements Gathering", "Process Improvement", "Data Analytics"]
-    },
-    {
       "name": "Stakeholder Management",
       "level": "Expert",
-      "keywords": ["Building Rapport", "Cross-cultural Communication", "Executive Communication"]
+      "keywords": ["Building Rapport", "Cross-cultural Communication", "Executive Communication", "Enterprise Deal-Making"]
     },
     {
       "name": "Leadership",
       "level": "Advanced",
-      "keywords": ["Team Building", "Mentoring", "Performance Management"]
-    },
-    {
-      "name": "Fast Learner",
-      "level": "Advanced",
-      "keywords": ["Adaptability", "New Technologies", "Rapid Learning"]
+      "keywords": ["Team Building", "Mentoring", "Developer Community Building", "Performance Management"]
     }
   ],
   "languages": [
     {
       "language": "English",
-      "fluency": "Native speaker"
+      "fluency": "Native"
     },
     {
       "language": "Chinese",
-      "fluency": "Native speaker"
+      "fluency": "Native"
     },
     {
       "language": "Thai",
-      "fluency": "Professional working proficiency"
+      "fluency": "Professional Conversation, Reading, and Writing"
     }
   ],
   "interests": [
@@ -237,11 +246,11 @@
   "references": [],
   "projects": [
     {
-      "name": "Vibe Coding with Qwen",
-      "summary": "A project exploring vibe coding techniques with Qwen",
+      "name": "Qwen AI Ecosystem — Open Source Repository",
+      "summary": "High-impact open-source repository authored to democratize AI implementation for non-technical stakeholders, supporting the Qwen AI ecosystem developer community in Southeast Asia",
       "url": "https://github.com/kendricksin/learn_to_qwen",
       "startDate": "2025-01-01",
-      "keywords": ["AI", "Qwen", "Coding"]
+      "keywords": ["AI", "Qwen", "MCP Agents", "Open Source", "Developer Community"]
     },
     {
       "name": "Interactive Resume",
