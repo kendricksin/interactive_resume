@@ -114,7 +114,19 @@
   ],
   "certificates": [
     {
+      "name": "Alibaba Cloud Certified Professional Database",
+      "date": "2026-03-17",
+      "issuer": "Alibaba Cloud Academy",
+      "url": ""
+    },
+    {
       "name": "Alibaba Cloud Certified Professional LLM Engineer",
+      "date": "2025-10-01",
+      "issuer": "Alibaba Cloud Academy",
+      "url": ""
+    },
+    {
+      "name": "Alibaba Cloud Certified Professional Cloud Architect",
       "date": "2025-10-01",
       "issuer": "Alibaba Cloud Academy",
       "url": ""
