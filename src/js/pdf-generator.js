@@ -379,15 +379,14 @@ class PDFGenerator {
             this.yPos += descLines.length * 3.5 + 2;
         }
 
+        const totalWidth = this.rightMargin - this.leftMargin;
         const barHeight = 3;
-        const barMaxWidth = 40;
-        const nameColWidth = 85;
-        const scoreColWidth = 15;
-        const colGap = 5;
-        const colWidth = (this.rightMargin - this.leftMargin) / 2;
+        const barMaxWidth = 50;
+        const scoreWidth = 12;
+        const nameWidth = totalWidth - barMaxWidth - scoreWidth - 4;
 
         techStack.categories.forEach(category => {
-            this.checkPageBreak(12);
+            this.checkPageBreak(10 + category.items.length * 5);
 
             this.doc.setFontSize(9);
             this.doc.setFont('times', 'bold');
@@ -397,17 +396,15 @@ class PDFGenerator {
             this.doc.setFontSize(7);
             this.doc.setFont('times', 'normal');
 
-            category.items.forEach((item, index) => {
+            category.items.forEach(item => {
                 this.checkPageBreak(6);
-                const col = index % 2;
-                const xBase = this.leftMargin + (col * colWidth);
 
                 // Name
-                const truncatedName = this.doc.splitTextToSize(item.name, nameColWidth - 2)[0];
-                this.doc.text(truncatedName, xBase, this.yPos);
+                const truncatedName = this.doc.splitTextToSize(item.name, nameWidth)[0];
+                this.doc.text(truncatedName, this.leftMargin, this.yPos);
 
                 // Bar background
-                const barX = xBase + nameColWidth;
+                const barX = this.leftMargin + nameWidth + 2;
                 const barY = this.yPos - 2.5;
                 this.doc.setFillColor(220, 220, 220);
                 this.doc.roundedRect(barX, barY, barMaxWidth, barHeight, 1, 1, 'F');
@@ -420,15 +417,9 @@ class PDFGenerator {
                 // Score
                 this.doc.text(`${item.score}/10`, barX + barMaxWidth + 2, this.yPos);
 
-                if (col === 1) {
-                    this.yPos += 5;
-                }
+                this.yPos += 4.5;
             });
 
-            // If odd number of items, advance after last row
-            if (category.items.length % 2 === 1) {
-                this.yPos += 5;
-            }
             this.yPos += 2;
         });
     }
