@@ -13,6 +13,17 @@ class PDFGenerator {
         this.doc = new jspdf.jsPDF();
         this.yPos = 20;
 
+        // 1. Set PDF metadata for machine readability
+        const basics = resumeData.basics;
+        const skillKeywords = (resumeData.skills || []).flatMap(s => s.keywords || []);
+        this.doc.setProperties({
+            title: `${basics.name} - Resume`,
+            subject: basics.label || '',
+            author: basics.name,
+            keywords: skillKeywords.join(', '),
+            creator: 'Interactive Resume Generator'
+        });
+
         // Generate each section
         this.renderHeader(resumeData.basics);
         this.renderSummary(resumeData.basics.summary);
@@ -22,6 +33,7 @@ class PDFGenerator {
         this.renderCertificates(resumeData.certificates);
         this.renderLanguages(resumeData.languages);
         this.renderAwards(resumeData.awards);
+        this.renderProjects(resumeData.projects);
 
         // Save the PDF
         this.doc.save(`${resumeData.basics.name.replace(/\s+/g, '_')}_Resume.pdf`);
@@ -48,25 +60,55 @@ class PDFGenerator {
         this.doc.text(basics.label, 105, this.yPos, { align: 'center' });
         this.yPos += 5;
 
-        // Contact info line
+        // Contact info line with clickable email
         this.doc.setFontSize(9);
         this.doc.setTextColor(60);
-        const contactParts = [];
-        if (basics.email) contactParts.push(basics.email);
-        if (basics.phone) contactParts.push(basics.phone);
-        if (basics.location?.city) contactParts.push(basics.location.city);
+        const contactItems = [];
+        if (basics.email) contactItems.push({ text: basics.email, url: `mailto:${basics.email}` });
+        if (basics.phone) contactItems.push({ text: basics.phone });
+        if (basics.location?.city) contactItems.push({ text: basics.location.city });
 
-        const contactLine = contactParts.join('  |  ');
-        this.doc.text(contactLine, 105, this.yPos, { align: 'center' });
+        const separator = '  |  ';
+        const fullContactText = contactItems.map(c => c.text).join(separator);
+        const contactTotalWidth = this.doc.getTextWidth(fullContactText);
+        let contactX = 105 - contactTotalWidth / 2;
+
+        contactItems.forEach((item, i) => {
+            if (item.url) {
+                this.doc.setTextColor(40, 80, 120);
+                this.doc.textWithLink(item.text, contactX, this.yPos, { url: item.url });
+                this.doc.setTextColor(60);
+            } else {
+                this.doc.text(item.text, contactX, this.yPos);
+            }
+            contactX += this.doc.getTextWidth(item.text);
+            if (i < contactItems.length - 1) {
+                this.doc.text(separator, contactX, this.yPos);
+                contactX += this.doc.getTextWidth(separator);
+            }
+        });
         this.yPos += 4;
 
-        // Social profiles line
+        // Social profiles line with clickable links
         if (basics.profiles && basics.profiles.length > 0) {
-            this.doc.setTextColor(40, 80, 120);
-            const profileLinks = basics.profiles.map(p => `${p.network}: ${p.url}`).join('  |  ');
-            const profileLines = this.doc.splitTextToSize(profileLinks, this.rightMargin - this.leftMargin);
-            this.doc.text(profileLines, 105, this.yPos, { align: 'center' });
-            this.yPos += profileLines.length * 4;
+            this.doc.setFontSize(9);
+            const separator = '  |  ';
+            const parts = basics.profiles.map(p => ({ label: `${p.network}: ${p.url}`, url: p.url }));
+            const totalText = parts.map(p => p.label).join(separator);
+            const totalWidth = this.doc.getTextWidth(totalText);
+            let xPos = 105 - totalWidth / 2;
+
+            parts.forEach((part, i) => {
+                this.doc.setTextColor(40, 80, 120);
+                this.doc.textWithLink(part.label, xPos, this.yPos, { url: part.url });
+                xPos += this.doc.getTextWidth(part.label);
+                if (i < parts.length - 1) {
+                    this.doc.setTextColor(60);
+                    this.doc.text(separator, xPos, this.yPos);
+                    xPos += this.doc.getTextWidth(separator);
+                }
+            });
+            this.yPos += 4;
         }
         this.yPos += 2;
 
@@ -217,7 +259,17 @@ class PDFGenerator {
 
             this.doc.setFont('times', 'bold');
             const certName = this.doc.splitTextToSize(cert.name, colWidth - 5);
-            this.doc.text(certName, xPos, this.yPos);
+            if (cert.url) {
+                this.doc.setTextColor(40, 80, 120);
+                this.doc.textWithLink(certName[0], xPos, this.yPos, { url: cert.url });
+                // Render remaining lines if name wraps
+                for (let i = 1; i < certName.length; i++) {
+                    this.doc.textWithLink(certName[i], xPos, this.yPos + (i * 3.5), { url: cert.url });
+                }
+                this.doc.setTextColor(0);
+            } else {
+                this.doc.text(certName, xPos, this.yPos);
+            }
 
             this.doc.setFont('times', 'normal');
             this.doc.setTextColor(80);
@@ -268,6 +320,41 @@ class PDFGenerator {
             if (award.summary) {
                 const summaryLines = this.doc.splitTextToSize(award.summary, this.rightMargin - this.leftMargin);
                 this.doc.text(summaryLines, this.leftMargin, this.yPos);
+                this.yPos += summaryLines.length * 3.5;
+            }
+            this.yPos += 2;
+        });
+    }
+
+    renderProjects(projects) {
+        if (!projects || projects.length === 0) return;
+
+        this.checkPageBreak(15);
+        this.renderSectionHeader('PROJECTS');
+
+        this.doc.setFontSize(8);
+        projects.forEach(project => {
+            this.checkPageBreak(12);
+
+            this.doc.setFont('times', 'bold');
+            if (project.url) {
+                this.doc.setTextColor(40, 80, 120);
+                this.doc.textWithLink(project.name, this.leftMargin, this.yPos, { url: project.url });
+                this.doc.setTextColor(0);
+            } else {
+                this.doc.text(project.name, this.leftMargin, this.yPos);
+            }
+
+            if (project.startDate) {
+                this.doc.setFont('times', 'normal');
+                this.doc.text(this.formatDate(project.startDate), this.rightMargin, this.yPos, { align: 'right' });
+            }
+            this.yPos += 3.5;
+
+            if (project.summary) {
+                this.doc.setFont('times', 'normal');
+                const summaryLines = this.doc.splitTextToSize(project.summary, this.rightMargin - this.leftMargin - 5);
+                this.doc.text(summaryLines, this.leftMargin + 3, this.yPos);
                 this.yPos += summaryLines.length * 3.5;
             }
             this.yPos += 2;

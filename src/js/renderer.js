@@ -198,7 +198,7 @@ function renderCertificates(certificates) {
         certElement.className = 'certificate-item';
         certElement.innerHTML = `
             <div class="cert-row">
-                <span class="cert-name">${cert.name}</span>
+                <span class="cert-name">${cert.url ? `<a href="${cert.url}" target="_blank" rel="noopener noreferrer">${cert.name}</a>` : cert.name}</span>
                 <span class="cert-date">${formatDate(cert.date)}</span>
             </div>
             <div class="cert-issuer">${cert.issuer}</div>
