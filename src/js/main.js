@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         renderAwards(resumeData.awards);
         renderCertificates(resumeData.certificates);
         renderLanguages(resumeData.languages);
+        renderTechStack(resumeData.techStack);
         
         // Initialize theme manager
         themeManager.initializeToggle();

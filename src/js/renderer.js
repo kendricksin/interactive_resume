@@ -223,6 +223,82 @@ function renderLanguages(languages) {
     });
 }
 
+function renderTechStack(techStack) {
+    const container = document.getElementById('techstack-container');
+    const description = document.getElementById('techstack-description');
+    if (!container || !techStack) return;
+
+    container.innerHTML = '';
+    if (description && techStack.description) {
+        description.textContent = techStack.description;
+    }
+
+    (techStack.categories || []).forEach(category => {
+        const catElement = document.createElement('div');
+        catElement.className = 'techstack-category';
+
+        const header = document.createElement('h3');
+        header.textContent = category.name;
+        catElement.appendChild(header);
+
+        const grid = document.createElement('div');
+        grid.className = 'techstack-grid';
+
+        category.items.forEach(item => {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'techstack-item';
+
+            const label = document.createElement('div');
+            label.className = 'techstack-label';
+            label.textContent = item.name;
+
+            const barContainer = document.createElement('div');
+            barContainer.className = 'techstack-bar-container';
+
+            const bar = document.createElement('div');
+            bar.className = 'techstack-bar';
+            bar.style.width = '0%';
+            bar.dataset.score = item.score;
+
+            const scoreLabel = document.createElement('span');
+            scoreLabel.className = 'techstack-score';
+            scoreLabel.textContent = `${item.score}/10`;
+
+            barContainer.appendChild(bar);
+            itemEl.appendChild(label);
+            itemEl.appendChild(barContainer);
+            itemEl.appendChild(scoreLabel);
+            grid.appendChild(itemEl);
+        });
+
+        catElement.appendChild(grid);
+        container.appendChild(catElement);
+    });
+
+    // Animate bars when tab becomes visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                container.querySelectorAll('.techstack-bar').forEach(bar => {
+                    const score = bar.dataset.score;
+                    bar.style.width = `${score * 10}%`;
+                });
+                observer.disconnect();
+            }
+        });
+    });
+    observer.observe(container);
+
+    // Also animate on tab click
+    document.querySelector('[data-tab="techstack"]')?.addEventListener('click', () => {
+        setTimeout(() => {
+            container.querySelectorAll('.techstack-bar').forEach(bar => {
+                bar.style.width = `${bar.dataset.score * 10}%`;
+            });
+        }, 50);
+    });
+}
+
 function formatDate(dateString) {
     if (!dateString) return '';
     const date = new Date(dateString);

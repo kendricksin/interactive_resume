@@ -206,19 +206,29 @@
   "publications": [],
   "skills": [
     {
-      "name": "AI Agentic Solutions",
-      "level": "Advanced",
-      "keywords": ["MCP Agents", "LLM Integration", "AI Workflow Automation", "RAG", "Prompt Engineering", "AI Deployment", "Open-Source AI Ecosystems"]
-    },
-    {
-      "name": "Business Process Analysis",
+      "name": "AI Solutioning & Deployment",
       "level": "Expert",
-      "keywords": ["Process Gap Identification", "Requirements Gathering", "AI Use Case Discovery", "Process Improvement", "Data Analytics", "Business ROI Mapping"]
+      "keywords": ["AI Use Case Discovery", "POC Delivery", "LLM Integration", "RAG", "Prompt Engineering", "AI Deployment", "AI Product Governance"]
     },
     {
-      "name": "Cloud Technologies / DevOps",
+      "name": "Agentic Automation",
       "level": "Advanced",
-      "keywords": ["Alibaba Cloud", "AWS", "Azure", "Google Cloud Platform", "Cloud Migration", "Cloud Optimization", "ArgoCD", "Container Orchestration"]
+      "keywords": ["MCP Agents", "AI Workflow Automation", "Agent Frameworks (OpenClaw)", "Enterprise System Integration", "Open-Source AI Ecosystems"]
+    },
+    {
+      "name": "Model Development & Inference",
+      "level": "Intermediate",
+      "keywords": ["PyTorch", "SciKit-Learn", "vLLM", "Local LLM", "Fine-tuning", "ASR / TTS"]
+    },
+    {
+      "name": "GTM Strategy & Market Development",
+      "level": "Expert",
+      "keywords": ["Market Entry Strategy", "AI Distribution", "Developer Community Building", "Open-Source Ecosystem Development", "Cross-cultural Communication", "APAC Market"]
+    },
+    {
+      "name": "Customer Success & Enterprise Sales",
+      "level": "Expert",
+      "keywords": ["Enterprise Deal-Making", "Multi-year Roadmap Structuring", "Technical-Business Liaison", "Client ROI Mapping", "Account Growth", "Negotiation Planning"]
     },
     {
       "name": "Project Management",
@@ -226,14 +236,9 @@
       "keywords": ["Agile/Scrum", "Waterfall", "Jira", "MS Project", "Risk Management", "Stakeholder Communication"]
     },
     {
-      "name": "Stakeholder Management",
-      "level": "Expert",
-      "keywords": ["Building Rapport", "Cross-cultural Communication", "Executive Communication", "Enterprise Deal-Making"]
-    },
-    {
-      "name": "Leadership",
+      "name": "Cloud Technologies / DevOps",
       "level": "Advanced",
-      "keywords": ["Team Building", "Mentoring", "Developer Community Building", "Performance Management"]
+      "keywords": ["Alibaba Cloud", "AWS", "Azure", "Google Cloud Platform", "Cloud Migration", "Cloud Optimization", "ArgoCD", "Container Orchestration"]
     }
   ],
   "languages": [
@@ -293,5 +298,56 @@
         "Live demo: https://kendricksin.github.io/interactive_resume/"
       ]
     }
-  ]
+  ],
+  "techStack": {
+    "description": "Product-led developer — diverse across domains because I build what the product needs, not what the technology dictates.",
+    "categories": [
+      {
+        "name": "AI & LLM Tooling",
+        "items": [
+          { "name": "AI Development (Claude Code, Open Code)", "score": 9 },
+          { "name": "Model Calling (OpenAI SDK, Anthropic SDK)", "score": 8 },
+          { "name": "Agents (OpenClaw, CoPaw, HiClaw)", "score": 7 },
+          { "name": "LLM Training / Fine-tuning (PyTorch, SciKit-Learn)", "score": 5 },
+          { "name": "Local LLM Inference (vLLM)", "score": 3 },
+          { "name": "Voice Applications (ASR / TTS)", "score": 3 }
+        ]
+      },
+      {
+        "name": "Backend & APIs",
+        "items": [
+          { "name": "FastAPI", "score": 7 },
+          { "name": "PostgreSQL", "score": 8 },
+          { "name": "SQLite", "score": 6 },
+          { "name": "Serverless (FC / Cloud Functions / Cloud Run / Lambda)", "score": 8 }
+        ]
+      },
+      {
+        "name": "Frontend & Web",
+        "items": [
+          { "name": "TypeScript", "score": 6 },
+          { "name": "React", "score": 6 },
+          { "name": "Vanilla JS", "score": 3 }
+        ]
+      },
+      {
+        "name": "DevOps & Infrastructure",
+        "items": [
+          { "name": "Cloud Native (Alibaba Cloud, GCP, AWS)", "score": 7 },
+          { "name": "Docker", "score": 6 },
+          { "name": "GitHub Actions", "score": 5 },
+          { "name": "Bash Scripting", "score": 3 },
+          { "name": "ArgoCD", "score": 2 }
+        ]
+      },
+      {
+        "name": "Platforms & Integrations",
+        "items": [
+          { "name": "Lark", "score": 7 },
+          { "name": "Microsoft Teams", "score": 4 },
+          { "name": "Google Workspace CLI", "score": 3 }
+        ]
+      }
+    ]
+  }
 }

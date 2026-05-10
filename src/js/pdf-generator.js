@@ -34,6 +34,7 @@ class PDFGenerator {
         this.renderLanguages(resumeData.languages);
         this.renderAwards(resumeData.awards);
         this.renderProjects(resumeData.projects);
+        this.renderTechStack(resumeData.techStack);
 
         // Save the PDF
         this.doc.save(`${resumeData.basics.name.replace(/\s+/g, '_')}_Resume.pdf`);
@@ -356,6 +357,77 @@ class PDFGenerator {
                 const summaryLines = this.doc.splitTextToSize(project.summary, this.rightMargin - this.leftMargin - 5);
                 this.doc.text(summaryLines, this.leftMargin + 3, this.yPos);
                 this.yPos += summaryLines.length * 3.5;
+            }
+            this.yPos += 2;
+        });
+    }
+
+    renderTechStack(techStack) {
+        if (!techStack || !techStack.categories) return;
+
+        this.checkPageBreak(20);
+        this.renderSectionHeader('TECH STACK');
+
+        // Description
+        if (techStack.description) {
+            this.doc.setFontSize(8);
+            this.doc.setFont('times', 'italic');
+            this.doc.setTextColor(80);
+            const descLines = this.doc.splitTextToSize(techStack.description, this.rightMargin - this.leftMargin);
+            this.doc.text(descLines, this.leftMargin, this.yPos);
+            this.doc.setTextColor(0);
+            this.yPos += descLines.length * 3.5 + 2;
+        }
+
+        const barHeight = 3;
+        const barMaxWidth = 40;
+        const nameColWidth = 85;
+        const scoreColWidth = 15;
+        const colGap = 5;
+        const colWidth = (this.rightMargin - this.leftMargin) / 2;
+
+        techStack.categories.forEach(category => {
+            this.checkPageBreak(12);
+
+            this.doc.setFontSize(9);
+            this.doc.setFont('times', 'bold');
+            this.doc.text(category.name, this.leftMargin, this.yPos);
+            this.yPos += 4;
+
+            this.doc.setFontSize(7);
+            this.doc.setFont('times', 'normal');
+
+            category.items.forEach((item, index) => {
+                this.checkPageBreak(6);
+                const col = index % 2;
+                const xBase = this.leftMargin + (col * colWidth);
+
+                // Name
+                const truncatedName = this.doc.splitTextToSize(item.name, nameColWidth - 2)[0];
+                this.doc.text(truncatedName, xBase, this.yPos);
+
+                // Bar background
+                const barX = xBase + nameColWidth;
+                const barY = this.yPos - 2.5;
+                this.doc.setFillColor(220, 220, 220);
+                this.doc.roundedRect(barX, barY, barMaxWidth, barHeight, 1, 1, 'F');
+
+                // Bar fill
+                const fillWidth = (item.score / 10) * barMaxWidth;
+                this.doc.setFillColor(40, 80, 120);
+                this.doc.roundedRect(barX, barY, fillWidth, barHeight, 1, 1, 'F');
+
+                // Score
+                this.doc.text(`${item.score}/10`, barX + barMaxWidth + 2, this.yPos);
+
+                if (col === 1) {
+                    this.yPos += 5;
+                }
+            });
+
+            // If odd number of items, advance after last row
+            if (category.items.length % 2 === 1) {
+                this.yPos += 5;
             }
             this.yPos += 2;
         });
